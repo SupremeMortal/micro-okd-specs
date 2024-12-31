@@ -12,7 +12,7 @@
 # This defines the base package name's version.
 
 %define pkgname openvswitch3.4
-
+%global commit 0
 
 %if 0%{?commit:1}
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
@@ -57,7 +57,7 @@ Summary: Open vSwitch
 Group: System Environment/Daemons daemon/database/utilities
 URL: http://www.openvswitch.org/
 Version: 3.4.1
-Release: 2%{?dist}
+Release: %autorelease%{?dist}
 
 # Nearly all of openvswitch is ASL 2.0.  The bugtool is LGPLv2+, and the
 # lib/sflow*.[ch] files are SISSL
@@ -80,8 +80,8 @@ Source: https://github.com/openvswitch/ovs/archive/%{commit}.tar.gz#/openvswitch
 %else
 Source: https://github.com/openvswitch/ovs/archive/v%{version}.tar.gz#/openvswitch-%{version}.tar.gz
 %endif
-Source2: %{pkgname}.sysusers
-Source3: %{pkgname}-hugetlbfs.sysusers
+Source2: %{_sourcedir}/%{pkgname}.sysusers
+Source3: %{_sourcedir}/%{pkgname}-hugetlbfs.sysusers
 Source10: https://fast.dpdk.org/rel/dpdk-%{dpdkver}.tar.xz
 
 %define docutilsver 0.12
@@ -93,7 +93,7 @@ Source101: https://pypi.io/packages/source/P/Pygments/Pygments-%{pygmentsver}.ta
 Source102: https://pypi.io/packages/source/S/Sphinx/Sphinx-%{sphinxver}.tar.gz
 Source103: https://pypi.io/packages/source/p/pyelftools/pyelftools-%{pyelftoolsver}.tar.gz
 
-%define apply_patch %(test -s %{_sourcedir}/openvswitch-%{version}.patch && echo 1 || echo 0)
+%define apply_patch %(test -s %{_sourcedir}/%{pkgname}-%{version}.patch && echo 1 || echo 0)
 
 %if %{apply_patch}
 Patch0: %{pkgname}-%{version}.patch
