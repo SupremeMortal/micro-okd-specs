@@ -769,6 +769,9 @@ exit 0
 %endif
 
 %changelog
+* Tue Dec 31 2024 SupremeMortal 3.4.1-6
+- Move directory of repo files (6178101+SupremeMortal@users.noreply.github.com)
+
 * Tue Dec 31 2024 SupremeMortal 3.4.1-5
 - Move source files to the SOURCES directory
   (6178101+SupremeMortal@users.noreply.github.com)
