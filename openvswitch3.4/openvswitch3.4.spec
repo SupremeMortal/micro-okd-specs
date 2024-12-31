@@ -57,7 +57,7 @@ Summary: Open vSwitch
 Group: System Environment/Daemons daemon/database/utilities
 URL: http://www.openvswitch.org/
 Version: 3.4.1
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 # Nearly all of openvswitch is ASL 2.0.  The bugtool is LGPLv2+, and the
 # lib/sflow*.[ch] files are SISSL
@@ -770,6 +770,12 @@ exit 0
 %endif
 
 %changelog
+* Tue Dec 31 2024 SupremeMortal 3.4.1-2
+- Fix build (6178101+SupremeMortal@users.noreply.github.com)
+
+* Tue Dec 31 2024 SupremeMortal <6178101+SupremeMortal@users.noreply.github.com>
+- Fix build (6178101+SupremeMortal@users.noreply.github.com)
+
 * Tue Dec 31 2024 SupremeMortal 3.4.1-1
 - new package built with tito
 
