@@ -80,8 +80,8 @@ Source: https://github.com/openvswitch/ovs/archive/%{commit}.tar.gz#/openvswitch
 %else
 Source: https://github.com/openvswitch/ovs/archive/v%{version}.tar.gz#/openvswitch-%{version}.tar.gz
 %endif
-Source2: openvswitch.sysusers
-Source3: openvswitch-hugetlbfs.sysusers
+Source2: %{pkgname}.sysusers
+Source3: %{pkgname}-hugetlbfs.sysusers
 Source10: https://fast.dpdk.org/rel/dpdk-%{dpdkver}.tar.xz
 
 %define docutilsver 0.12
@@ -96,7 +96,7 @@ Source103: https://pypi.io/packages/source/p/pyelftools/pyelftools-%{pyelftoolsv
 %define apply_patch %(test -s %{_sourcedir}/openvswitch-%{version}.patch && echo 1 || echo 0)
 
 %if %{apply_patch}
-Patch0:    openvswitch-%{version}.patch
+Patch0: %{pkgname}-%{version}.patch
 %endif
 
 # The DPDK is designed to optimize througput of network traffic using, among
