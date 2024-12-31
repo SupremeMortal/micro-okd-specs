@@ -769,6 +769,9 @@ exit 0
 %endif
 
 %changelog
+* Tue Dec 31 2024 SupremeMortal 3.4.1-8
+- Use raw URLS (6178101+SupremeMortal@users.noreply.github.com)
+
 * Tue Dec 31 2024 SupremeMortal 3.4.1-7
 - Use HTTP to retrieve files (6178101+SupremeMortal@users.noreply.github.com)
 
