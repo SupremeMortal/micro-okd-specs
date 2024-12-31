@@ -80,5 +80,8 @@ install -p -m 644 docs/crictl.1 %{buildroot}%{_mandir}/man1
 %{_mandir}/man1/crictl*.1*
 
 %changelog
+* Tue Dec 31 2024 SupremeMortal 1.31.1-1
+- new package built with tito
+
 * Mon Dec 30 2024 Owen Howard <owen@ziax.com> - 1.30.0-1
 - Initial package
