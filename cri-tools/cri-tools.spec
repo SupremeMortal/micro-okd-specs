@@ -22,8 +22,8 @@
 %global import_path %{provider_prefix}
 
 Name: cri-tools
-Version: 1.30.0
-Release: 6%{?dist}
+Version: 1.31.1
+Release: 1%{?dist}
 Summary: CLI and validation tools for Container Runtime Interface
 License: Apache-2.0
 URL: https://%{provider_prefix}

@@ -7,7 +7,7 @@
 %global git_tree_state  clean
 %global criocli_path    ""
 
-Version:        1.30.8
+Version:        1.31.3
 
 %define gobuild(o:) %{expand:
   # https://bugzilla.redhat.com/show_bug.cgi?id=995136#c12
@@ -22,7 +22,7 @@ Version:        1.30.8
 
 
 # Commit for the builds
-%global commit0 51ea93e0b9af5ad2cfa7f8071ec48d99bf39a3ec
+%global commit0 b7f3c240bcbda6fae8d43561694d18317e09e167
 
 Name:           cri-o
 Epoch:          0
