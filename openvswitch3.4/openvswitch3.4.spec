@@ -56,7 +56,7 @@ Summary: Open vSwitch
 Group: System Environment/Daemons daemon/database/utilities
 URL: http://www.openvswitch.org/
 Version: 3.4.1
-Release: 7%{?dist}
+Release: 8%{?dist}
 
 # Nearly all of openvswitch is ASL 2.0.  The bugtool is LGPLv2+, and the
 # lib/sflow*.[ch] files are SISSL
@@ -79,8 +79,8 @@ Source: https://github.com/openvswitch/ovs/archive/%{commit}.tar.gz#/openvswitch
 %else
 Source: https://github.com/openvswitch/ovs/archive/v%{version}.tar.gz#/openvswitch-%{version}.tar.gz
 %endif
-Source2: https://github.com/SupremeMortal/micro-okd-specs/blob/%{pkgname}-%{version}-%{release}/%{pkgname}/%{pkgname}.sysusers
-Source3: https://github.com/SupremeMortal/micro-okd-specs/blob/%{pkgname}-%{version}-%{release}/%{pkgname}/%{pkgname}-hugetlbfs.sysusers
+Source2: https://raw.githubusercontent.com/SupremeMortal/micro-okd-specs/refs/tags/%{pkgname}-%{version}-%{release}/%{pkgname}/%{pkgname}.sysusers
+Source3: https://raw.githubusercontent.com/SupremeMortal/micro-okd-specs/refs/tags/%{pkgname}-%{version}-%{release}/%{pkgname}/%{pkgname}-hugetlbfs.sysusers
 Source10: https://fast.dpdk.org/rel/dpdk-%{dpdkver}.tar.xz
 
 %define docutilsver 0.12
