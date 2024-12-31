@@ -173,5 +173,8 @@ install -dp %{buildroot}%{_sharedstatedir}/containers
 %{_datadir}/zsh/site-functions/_%{service_name}*
 
 %changelog
+* Tue Dec 31 2024 SupremeMortal 1.31.3-1
+- new package built with tito
+
 * Mon Dec 30 2024 Owen Howard <owen@ziax.com> - 0.1-1
 - Initial build
