@@ -18,7 +18,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %{!?version: %global version %{version_major}.%{version_minor}.%{version_patch}}
-%{!?release: %global release 3.git%{shortcommit}}
+%{!?release: %global release 4.git%{shortcommit}}
 
 %if ! 0%{?os_git_vars:1}
 %global os_git_vars OS_GIT_VERSION=%{version}-%{release} OS_GIT_COMMIT=%{commit} OS_GIT_MAJOR=%{version_major} OS_GIT_MINOR=%{version_minor} OS_GIT_PATCH=%{version_patch} OS_GIT_TREE_STATE=clean
@@ -109,6 +109,7 @@ GOARCH=s390x
 %endif
 
 go install github.com/josephspurrier/goversioninfo/cmd/goversioninfo@latest
+export PATH=$PATH:$(go env GOPATH)/bin
 
 %{make} build GO_BUILD_PACKAGES:='./cmd/oc ./tools/genman'
 
