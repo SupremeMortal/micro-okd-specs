@@ -174,6 +174,15 @@ done
 %endif
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-6.gitc64c430
+- Bump to release 6 (6178101+SupremeMortal@users.noreply.github.com)
+- Remove MacOS and Windows references
+  (6178101+SupremeMortal@users.noreply.github.com)
+- Automatic commit of package [openshift-clients] release
+  [4.18.0-5.gitc64c430]. (6178101+SupremeMortal@users.noreply.github.com)
+- Remove cross compiled binaries
+  (6178101+SupremeMortal@users.noreply.github.com)
+
 * Wed Jan 01 2025 SupremeMortal 4.18.0-5.gitc64c430
 - Remove cross compiled binaries
   (6178101+SupremeMortal@users.noreply.github.com)
