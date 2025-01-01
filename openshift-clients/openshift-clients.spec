@@ -174,6 +174,9 @@ done
 %endif
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-1.gitc64c430
+- new package built with tito
+
 * Wed Jan 01 2025 Owen Howard - 4.18.0-1
 - Version 4.18
 
