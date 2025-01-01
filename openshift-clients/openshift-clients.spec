@@ -133,6 +133,10 @@ done
 
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-7.gitc64c430
+- Remove redistributable package
+  (6178101+SupremeMortal@users.noreply.github.com)
+
 * Wed Jan 01 2025 SupremeMortal 4.18.0-6.gitc64c430
 - Bump to release 6 (6178101+SupremeMortal@users.noreply.github.com)
 - Remove MacOS and Windows references
