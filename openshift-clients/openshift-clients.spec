@@ -173,6 +173,11 @@ done
 %endif
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-2.gitc64c430
+- Bump release (6178101+SupremeMortal@users.noreply.github.com)
+- Remove goversioninfo build requirement
+  (6178101+SupremeMortal@users.noreply.github.com)
+
 * Wed Jan 01 2025 SupremeMortal 4.18.0-1.gitc64c430
 - new package built with tito
 
