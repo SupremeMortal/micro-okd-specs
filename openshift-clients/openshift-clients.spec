@@ -177,6 +177,10 @@ done
 %endif
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-4.gitc64c430
+- export PATH for goversioninfo
+  (6178101+SupremeMortal@users.noreply.github.com)
+
 * Wed Jan 01 2025 SupremeMortal 4.18.0-3.gitc64c430
 - Install goversioninfo manually
   (6178101+SupremeMortal@users.noreply.github.com)
