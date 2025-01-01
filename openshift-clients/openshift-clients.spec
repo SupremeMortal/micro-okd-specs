@@ -18,7 +18,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %{!?version: %global version %{version_major}.%{version_minor}.%{version_patch}}
-%{!?release: %global release 1.git%{shortcommit}}
+%{!?release: %global release 2.git%{shortcommit}}
 
 %if ! 0%{?os_git_vars:1}
 %global os_git_vars OS_GIT_VERSION=%{version}-%{release} OS_GIT_COMMIT=%{commit} OS_GIT_MAJOR=%{version_major} OS_GIT_MINOR=%{version_minor} OS_GIT_PATCH=%{version_patch} OS_GIT_TREE_STATE=clean
