@@ -18,7 +18,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %{!?version: %global version %{version_major}.%{version_minor}.%{version_patch}}
-%{!?release: %global release 4.git%{shortcommit}}
+%{!?release: %global release 5.git%{shortcommit}}
 
 %if ! 0%{?os_git_vars:1}
 %global os_git_vars OS_GIT_VERSION=%{version}-%{release} OS_GIT_COMMIT=%{commit} OS_GIT_MAJOR=%{version_major} OS_GIT_MINOR=%{version_minor} OS_GIT_PATCH=%{version_patch} OS_GIT_TREE_STATE=clean
@@ -174,6 +174,10 @@ done
 %endif
 
 %changelog
+* Wed Jan 01 2025 SupremeMortal 4.18.0-5.gitc64c430
+- Remove cross compiled binaries
+  (6178101+SupremeMortal@users.noreply.github.com)
+
 * Wed Jan 01 2025 SupremeMortal 4.18.0-4.gitc64c430
 - export PATH for goversioninfo
   (6178101+SupremeMortal@users.noreply.github.com)
