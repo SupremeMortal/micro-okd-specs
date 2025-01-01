@@ -18,7 +18,7 @@
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 %{!?version: %global version %{version_major}.%{version_minor}.%{version_patch}}
-%{!?release: %global release 6.git%{shortcommit}}
+%{!?release: %global release 7.git%{shortcommit}}
 
 %if ! 0%{?os_git_vars:1}
 %global os_git_vars OS_GIT_VERSION=%{version}-%{release} OS_GIT_COMMIT=%{commit} OS_GIT_MAJOR=%{version_major} OS_GIT_MINOR=%{version_minor} OS_GIT_PATCH=%{version_patch} OS_GIT_TREE_STATE=clean
@@ -61,20 +61,6 @@ Obsoletes:      oc <= %{version}
 Requires:       bash-completion
 
 %description
-%{summary}
-
-%package redistributable
-Summary:        OpenShift Client binaries for Linux, Mac OSX, and Windows
-Provides:       atomic-openshift-clients-redistributable = %{version}
-Obsoletes:      atomic-openshift-clients-redistributable <= %{version}
-Provides:       origin-clients-redistributable = %{version}
-Obsoletes:      origin-clients-redistributable <= %{version}
-Provides:       okd-clients-redistributable = %{version}
-Obsoletes:      okd-clients-redistributable <= %{version}
-Provides:       oc-redistributable = %{version}
-Obsoletes:      oc-redistributable <= %{version}
-
-%description redistributable
 %{summary}
 
 %prep
@@ -123,20 +109,6 @@ install -p -m 755 ./oc %{buildroot}%{_bindir}/oc
 ln -s ./oc %{buildroot}%{_bindir}/kubectl
 [[ -e %{buildroot}%{_bindir}/kubectl ]]
 
-%ifarch x86_64
-# Install client executable for windows and mac
-install -d %{buildroot}%{_datadir}/%{name}/{linux}
-install -p -m 755 ./oc %{buildroot}%{_datadir}/%{name}/linux/oc
-ln -s ./oc %{buildroot}%{_datadir}/%{name}/linux/kubectl
-[[ -e %{buildroot}%{_datadir}/%{name}/linux/kubectl ]]
-#install -p -m 755 ./_output/bin/darwin_amd64/oc %{buildroot}/%{_datadir}/%{name}/macosx/oc
-#ln -s ./oc %{buildroot}/%{_datadir}/%{name}/macosx/kubectl
-#[[ -e %{buildroot}/%{_datadir}/%{name}/macosx/kubectl ]]
-#install -p -m 755 ./_output/bin/windows_amd64/oc.exe %{buildroot}/%{_datadir}/%{name}/windows/oc.exe
-#ln -s ./oc.exe %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe
-#[[ -e %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe ]]
-%endif
-
 # Install man1 man pages
 install -d -m 0755 %{buildroot}%{_mandir}/man1
 ./genman %{buildroot}%{_mandir}/man1 oc
@@ -159,19 +131,6 @@ done
 %dir %{_mandir}/man1/
 %{_mandir}/man1/oc*
 
-%ifarch x86_64
-%files redistributable
-%license LICENSE
-%dir %{_datadir}/%{name}/linux/
-#%dir %{_datadir}/%{name}/macosx/
-#%dir %{_datadir}/%{name}/windows/
-%{_datadir}/%{name}/linux/oc
-%{_datadir}/%{name}/linux/kubectl
-#%{_datadir}/%{name}/macosx/oc
-#%{_datadir}/%{name}/macosx/kubectl
-#%{_datadir}/%{name}/windows/oc.exe
-#%{_datadir}/%{name}/windows/kubectl.exe
-%endif
 
 %changelog
 * Wed Jan 01 2025 SupremeMortal 4.18.0-6.gitc64c430
