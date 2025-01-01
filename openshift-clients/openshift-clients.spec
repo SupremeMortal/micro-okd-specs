@@ -108,15 +108,12 @@ GOOS=linux
 GOARCH=s390x
 %endif
 
-go install github.com/josephspurrier/goversioninfo/cmd/goversioninfo@latest
-export PATH=$PATH:$(go env GOPATH)/bin
-
 %{make} build GO_BUILD_PACKAGES:='./cmd/oc ./tools/genman'
 
-%ifarch x86_64
-  # Create Binaries for all supported arches
-  %{make} cross-build-darwin-amd64 cross-build-windows-amd64 GO_BUILD_PACKAGES:='./cmd/oc'
-%endif
+#%ifarch x86_64
+#  # Create Binaries for all supported arches
+#  %{make} cross-build-darwin-amd64 cross-build-windows-amd64 GO_BUILD_PACKAGES:='./cmd/oc'
+#%endif
 
 %install
 install -d %{buildroot}%{_bindir}
