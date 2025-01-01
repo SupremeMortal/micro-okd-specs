@@ -125,16 +125,16 @@ ln -s ./oc %{buildroot}%{_bindir}/kubectl
 
 %ifarch x86_64
 # Install client executable for windows and mac
-install -d %{buildroot}%{_datadir}/%{name}/{linux,macosx,windows}
+install -d %{buildroot}%{_datadir}/%{name}/{linux}
 install -p -m 755 ./oc %{buildroot}%{_datadir}/%{name}/linux/oc
 ln -s ./oc %{buildroot}%{_datadir}/%{name}/linux/kubectl
 [[ -e %{buildroot}%{_datadir}/%{name}/linux/kubectl ]]
-install -p -m 755 ./_output/bin/darwin_amd64/oc %{buildroot}/%{_datadir}/%{name}/macosx/oc
-ln -s ./oc %{buildroot}/%{_datadir}/%{name}/macosx/kubectl
-[[ -e %{buildroot}/%{_datadir}/%{name}/macosx/kubectl ]]
-install -p -m 755 ./_output/bin/windows_amd64/oc.exe %{buildroot}/%{_datadir}/%{name}/windows/oc.exe
-ln -s ./oc.exe %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe
-[[ -e %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe ]]
+#install -p -m 755 ./_output/bin/darwin_amd64/oc %{buildroot}/%{_datadir}/%{name}/macosx/oc
+#ln -s ./oc %{buildroot}/%{_datadir}/%{name}/macosx/kubectl
+#[[ -e %{buildroot}/%{_datadir}/%{name}/macosx/kubectl ]]
+#install -p -m 755 ./_output/bin/windows_amd64/oc.exe %{buildroot}/%{_datadir}/%{name}/windows/oc.exe
+#ln -s ./oc.exe %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe
+#[[ -e %{buildroot}/%{_datadir}/%{name}/windows/kubectl.exe ]]
 %endif
 
 # Install man1 man pages
@@ -163,14 +163,14 @@ done
 %files redistributable
 %license LICENSE
 %dir %{_datadir}/%{name}/linux/
-%dir %{_datadir}/%{name}/macosx/
-%dir %{_datadir}/%{name}/windows/
+#%dir %{_datadir}/%{name}/macosx/
+#%dir %{_datadir}/%{name}/windows/
 %{_datadir}/%{name}/linux/oc
 %{_datadir}/%{name}/linux/kubectl
-%{_datadir}/%{name}/macosx/oc
-%{_datadir}/%{name}/macosx/kubectl
-%{_datadir}/%{name}/windows/oc.exe
-%{_datadir}/%{name}/windows/kubectl.exe
+#%{_datadir}/%{name}/macosx/oc
+#%{_datadir}/%{name}/macosx/kubectl
+#%{_datadir}/%{name}/windows/oc.exe
+#%{_datadir}/%{name}/windows/kubectl.exe
 %endif
 
 %changelog
