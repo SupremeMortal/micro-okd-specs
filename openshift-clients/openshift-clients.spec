@@ -46,7 +46,6 @@ ExclusiveArch:  x86_64 aarch64 ppc64le s390x
 %endif
 
 BuildRequires:  golang >= %{golang_version}
-BuildRequires:  goversioninfo
 BuildRequires:  krb5-devel
 BuildRequires:  rsync
 
